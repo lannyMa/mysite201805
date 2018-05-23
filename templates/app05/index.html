@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+</head>
+<body>
+<div>
+    <form action="/app05/" method="post">
+        <p>{{ user_info_obj.email }}</p>
+        {% csrf_token %}
+    </form>
+</div>
+</body>
+</html>
