@@ -15,7 +15,7 @@ class ArticlesListView(APIView):
 
     def get(self, request, format=None):
         articles = Articles.objects.all()
-        articles_serializer = ArticlesSerializer(articles, many=True)
+        articles_serializer = ArticlesSerializer(articles, many=True)  # 返回多个对象
         print(articles_serializer)
         print(type(articles_serializer))
 
