@@ -25,6 +25,8 @@ urlpatterns = [
     path('app05/', include("app05.urls")),
     path('app06/', include("app06.urls")),
     path('app07/', include("app07.urls")),
+    path('app08/', include("app08.urls")),
+    path('snippets/', include("snippets.urls")),
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

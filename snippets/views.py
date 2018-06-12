@@ -28,10 +28,10 @@ from rest_framework import status
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # 优化list
-from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
-from rest_framework import mixins
-from rest_framework import generics
+# from snippets.models import Snippet
+# from snippets.serializers import SnippetSerializer
+# from rest_framework import mixins
+# from rest_framework import generics
 
 # class SnippetList(mixins.ListModelMixin, generics.GenericAPIView):
 #     queryset = Snippet.objects.all()
@@ -39,6 +39,18 @@ from rest_framework import generics
 #
 #     def get(self, request, *args, **kwargs): #写了才有get
 #         return self.list(request, *args, **kwargs) # list 分页,序列化等
+
+# listapiview
+# from snippets.models import Snippet
+# from snippets.serializers import SnippetSerializer
+# from rest_framework import mixins
+# from rest_framework import generics
+#
+#
+# class SnippetList(generics.ListAPIView):
+#     queryset = Snippet.objects.all()
+#     serializer_class = SnippetSerializer
+
 
 # 看下源码
 # class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
@@ -62,7 +74,7 @@ class LargeResultsSetPagination(PageNumberPagination):
     page_size = 1
     page_size_query_param = 'page_size'
     page_query_param = 'p'
-    max_page_size = 10 # http://127.0.0.1:8000/snippets/snippets?p=2&page_size=2 可以自定义参数
+    max_page_size = 10  # http://127.0.0.1:8000/snippets/snippets?p=2&page_size=2 可以自定义参数 http://www.django-rest-framework.org/api-guide/pagination/
 
 
 class SnippetList(generics.ListCreateAPIView):

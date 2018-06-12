@@ -37,12 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app01.apps.App01Config',
     'rest_framework',
+    'snippets.apps.SnippetsConfig',
     'app02',
     'app03',
     'app04',
     'app05',
     'app06',
     'app07',
+    'app08',
+    'app09',
+
 ]
 
 MIDDLEWARE = [
@@ -121,6 +125,10 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
@@ -139,5 +147,21 @@ STATIC_URL = '/static/'
 #     }
 # }
 
+
+EMAIL_HOST = "smtp.sina.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "lanny@sina.com"
+EMAIL_HOST_PASSWORD = "123456"
+EMAIL_USE_TLS = False
+EMAIL_FROM = "lanny@sina.com"
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# http://www.django-rest-framework.org/api-guide/settings/#page_size
+# 查看源码包的settings.py配置覆盖
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#     'PAGE_SIZE': 1
+# }

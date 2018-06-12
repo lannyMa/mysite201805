@@ -4,6 +4,7 @@
 from django.urls import path, include
 from app02 import views
 
+# 测试模型
 app_name = 'app02'
 urlpatterns = [
     path('addbook/', views.addbook, name="addbook"),
