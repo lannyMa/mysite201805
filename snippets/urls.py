@@ -2,11 +2,13 @@
 # coding=utf-8
 
 from django.urls import path, include
-from django.conf.urls import url
+from rest_framework.routers import DefaultRouter
 from snippets import views
+
+router = DefaultRouter()
+router.register(r'snippets', views.SnippetList)
 
 app_name = 'snippets'
 urlpatterns = [
-    # path('', views.index, name="index"),
-    path('snippets', views.SnippetList.as_view(), name="snippets"),
+    path('', include(router.urls))
 ]
